@@ -1,7 +1,7 @@
 import express from "express";
 const app = express();
 
-import dotenv from "dotenv";
+import {ENV} from "../lib/env.js"
 dotenv.config();
 
 import authRoutes from "./routes/auth.route.js";
@@ -9,7 +9,7 @@ import messageRoutes from "./routes/message.route.js";
 
 import {connectDB} from "./lib/db.js";
 
-const PORT = process.env.PORT || 3001;
+const PORT = ENV.PORT || 3002;
 
 app.use(express.json()) //req.body
 
